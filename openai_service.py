@@ -45,6 +45,7 @@ def tts(response):
     with client.audio.speech.with_streaming_response.create(
         model='tts-1',
         voice='shimmer',
+        speed=2.0,
         input=response
     ) as stream:
         stream.stream_to_file(filename)
